@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            
+        }
+
+        
+    </style>
+</head>
+<body bgcolor="skyblue">
+    <h1 style="text-align: center;">TO DO LIST</h1>
+    <div class="container">
+        <input id="one" type="text">
+        <button id="button1">ADD items</button>
+        <div id="todo"></div>
+    </div>
+
+    <script>
+      var btn1=document.getElementById("button1");
+      var toDo=document.getElementById("todo");
+      var input1=document.getElementById("one");
+      
+      btn1.addEventListener("click",function(){
+        var div1=document.createElement("div");
+        var list=document.createElement("li");
+        list.innerText=input1.value;
+
+        var donebutton=document.createElement("button");
+        donebutton.innerText="DONE";
+        donebutton.addEventListener("click",function(){
+            list.style.textDecoration="line-through"
+        }) 
+        
+        var deletebutton=document.createElement("button");
+        deletebutton.innerText="delete";
+        deletebutton.addEventListener("click",function(){
+            toDo.removeChild(div1)
+        }) 
+    
+    
+    div1.appendChild(list);
+    div1.appendChild(donebutton);
+    div1.appendChild(deletebutton);
+    toDo.appendChild(div1);
+    input1.value="" 
+
+
+})
+      
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
